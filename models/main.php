@@ -18,6 +18,10 @@ Class Main extends Model {
         return $result;
     }
 
+    public function check_exist($username) {
+        return $this->query("SELECT * FROM users WHERE username='$username'");
+    }
+
     public function insert_into_user($username, $password) {
         $query = "INSERT INTO users values('', '$username', '$password', '', '')";
         $result = $this->query($query);

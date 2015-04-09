@@ -207,7 +207,8 @@ EXE.isLogin = <?php echo json_encode($userInfo['isLogin'])?>;
     });
 
     // 编辑事件
-    $(document).on('touchstart', 'a.item-edit', function() {
+    //$('#wrapper').on('click', function(e) {
+    $(document).on('touchstart', '.icon-pencil', function() {
         var result = [];
         var $parent = $(this).closest('.item');
         var id = $parent.data('id');

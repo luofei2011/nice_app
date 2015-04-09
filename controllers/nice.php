@@ -108,13 +108,22 @@ Class Nice extends Controller {
 
         $result = NULL;
         if ($username && $password) {
-            $result = $this->main->is_user_exist($username, $password);
+            $result = $this->main->check_exist($username);
         }
 
         if (!$result) {
             $this->main->insert_into_user($username, $password);
+        } else {
+            $result = $this->main->is_user_exist($username, $password);
+
+            if (!$result) {
+                echo "fail";
+                return false;
+            }
         }
 
+        Session::set('username', $username);
+        Session::set('token', md5($username . "poised-flw.com"));
         echo "success";
     }
 

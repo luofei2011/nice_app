@@ -229,7 +229,7 @@ EXE.isLogin = <?php echo json_encode($userInfo['isLogin'])?>;
                 });
             }
         });
-        $addItem.find('a').attr('data-id', id).addClass('edit');
+        $addItem.find('.deal-btn a').attr('data-id', id).addClass('edit');
 
         $cover.show();
     });

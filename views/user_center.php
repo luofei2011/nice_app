@@ -12,7 +12,7 @@
 </head>
 <body>
 <header id="header">
-    <a href="/index.html" class="back"><i class="icon-left-open-big"></i></a>
+    <a href="<?php echo BASE_URL;?>" class="back"><i class="icon-left-open-big"></i></a>
     <span>个人中心</span>
 </header>
 <section class="bg">
@@ -21,24 +21,26 @@
     </a>
 </section>
 <section class="user-container">
+    <?php if ($userInfo['isLogin']) {
+    ?>
     <div class="list">
         <div class="item">
             <span class="label-icon">
                 <i class="icon-user"></i>
             </span>
-            <input type="text" value="luofei">
+            <input type="text" value="<?php echo $userInfo['username'];?>" disabled="disabled">
         </div>
         <div class="item">
             <span class="label-icon">
                 <i class="icon-mobile"></i>
             </span>
-            <input type="text" value="18585734501">
+            <input type="text" value="<?php echo $userInfo['phone'];?>">
         </div>
         <div class="item">
             <span class="label-icon">
                 <i class="icon-mail-1"></i>
             </span>
-            <input type="text" value="luofeihit2010@gmail.com">
+            <input type="text" value="<?php echo $userInfo['email'];?>">
         </div>
         <div class="item">
             <span class="label-icon">
@@ -50,9 +52,11 @@
             </select>
         </div>
     </div>
+    <?php } else {?>
     <div class="no-login">
-        <a href="/login.html">你还没有登录</a>
+        <a href="<?php echo BASE_URL . "?f=user_login"?>">你还没有登录</a>
     </div>
+    <?php }?>
 </section>
 <script src="http://cdn.staticfile.org/zepto/1.0rc1/zepto.min.js"></script>
 </body>

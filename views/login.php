@@ -17,18 +17,20 @@
 </header>
 <section class="login-container">
     <div class="main">
-        <div class="item">
-            <div class="item-field">
-                <i class="icon-user"></i>
-                <input type="text" placeholder="用户名 / 邮箱 / 手机" name="username" id="username">
+        <form method="post" action="">
+            <div class="item">
+                <div class="item-field">
+                    <i class="icon-user"></i>
+                    <input type="text" placeholder="用户名 / 邮箱 / 手机" name="username" id="username">
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="item-field">
-                <i class="icon-lock-alt"></i>
-                <input type="password" name="password" id="password">
+            <div class="item">
+                <div class="item-field">
+                    <i class="icon-lock-alt"></i>
+                    <input type="password" name="password" id="password">
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </section>
 <section class="btn-group">

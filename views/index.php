@@ -12,7 +12,7 @@
 </head>
 <body>
 <header id="header">
-    <a href="<?php echo BASE_URL . "?f=user_center"?>" class="position"><i class="icon-user"></i></a>
+    <a href="<?php if ($userInfo['isLogin']) { echo BASE_URL . "?f=user_center"; } else { echo BASE_URL . "?f=user_login"; }?>" class="position"><i class="icon-user"></i></a>
     <span><?php if ($userInfo['isLogin']) { ?>添加记录<?php } else { ?>点击头像登录<?php } ?></span>
 </header>
 <div id="wrapper">
